@@ -55,8 +55,8 @@ tf 1.4.0
       写train函数-session.run；写valid函数; 保存模型为checkpoint+在线预估需要的pb格式
 
     * save_model.py保存模型
-      * checkpoint: 网络模型结构，参数，梯度
-      * pd: 较小,只保存网络结构和参数
+      * checkpoint: 网络模型结构，参数，优化操作等
+      * pd: 较小,只保存网络结构和所选变量有关的参数
       * PS.可以用tensorboard从pd读取网络结构
     * auc.py：定义评估对象类
     * ps.py 参数服务：定义PS单例模式
