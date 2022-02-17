@@ -1,6 +1,6 @@
 '''
 model模块中模型训练部分：
-模型定义文件：配置文件; 定义结构+计算loss; setup_graph:建立图框架+梯度更新过程
+FNN模型定义文件：配置文件; 定义结构+计算loss; setup_graph:建立图框架+梯度更新过程
 '''
 
 import tensorflow as tf
@@ -28,9 +28,9 @@ config = {
     'test_show_iter': 1000,
     'last_test_auc':0.5,
 
-    'saved_checkpoint': 'data/saved_ckpt',
+    'saved_checkpoint': 'data/fnn/saved_ckpt',
     'checkpoint_name': 'fnn',
-    'saved_pd':'data/saved_pd',
+    'saved_pd':'data/fnn/saved_pd',
 
     "input_tensor": ["input_tensor"],
     "output_tensor": ["output_tensor"]
