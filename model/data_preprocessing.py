@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 '''
-model模块中数据流预处理部分
+model模块中数据流预处理部分:
 读取数据，划分数据集; 定义哈希 + 将所有特征项进行hash(名+值); 转换为tfrecords类型
 '''
 import os
@@ -100,6 +100,13 @@ if __name__ == '__main__':
         tohash(test_ds, test_hash_path)
         print("Hash process finished.")
 
-    totfrecords(train_hash_path, 'data')
-    totfrecords(test_hash_path, 'data')
-    print("tfrecords files generated.")
+    train_tfrecords_path = 'data/train'
+    test_tfrecords_path = 'data/test'
+    if not os.path.exists(train_tfrecords_path):
+        os.mkdir(train_tfrecords_path)
+        totfrecords(train_hash_path, train_tfrecords_path)
+    print("train tfrecords files generated.")
+    if not os.path.exists(test_tfrecords_path):
+        os.mkdir(test_tfrecords_path)
+        totfrecords(test_hash_path, test_tfrecords_path)
+    print("test tfrecords files generated.")
