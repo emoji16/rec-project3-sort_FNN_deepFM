@@ -62,7 +62,9 @@ tf 1.4.0
     * ps.py 参数服务：定义PS单例模式
     * save_load_model.py
 
-    
+  * **预估服务 predict_server**：在线input data； output score
+
+    加载模型； 请求特征服务器；基于特征值去ps参数服务器加载向量；输入模型返回结果
 
     
 
