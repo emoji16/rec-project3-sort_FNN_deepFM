@@ -74,7 +74,7 @@ def get_tfrecords_example(feature, label):
 def totfrecords(file, save_dir):
     print("Generating tfrecords from file: %s..." % file)
     file_num = 0
-    writer = tf.io.TFRecordWriter(save_dir + '/' + 'part-%06d'%file_num + '.tfrecords')
+    writer = tf.python_io.TFRecordWriter(save_dir + '/' + 'part-%06d'%file_num + '.tfrecords')
     with open(file, 'r') as f:
         lines = f.readlines()
         for i, line in enumerate(lines):
@@ -87,7 +87,7 @@ def totfrecords(file, save_dir):
             if (i+1) % 20000 == 0:
                 writer.close()
                 file_num += 1
-                writer = tf.io.TFRecordWriter(save_dir + '/' + 'part-%06d' % file_num + '.tfrecords')
+                writer = tf.python_io.TFRecordWriter(save_dir + '/' + 'part-%06d' % file_num + '.tfrecords')
     writer.close()
 
 if __name__ == '__main__':
